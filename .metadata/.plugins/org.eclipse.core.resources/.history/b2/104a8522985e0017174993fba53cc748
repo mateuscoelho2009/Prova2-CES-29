@@ -1,0 +1,67 @@
+package Q2.Q2;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class VulnerableClass {
+	Scanner console;
+	
+	public void RorWMethod (String FILENAME) {
+		console = new Scanner(System.in);
+	    System.out.print("Digite a operacao desejada para realizar no arquivo <R para ler um arquivo, "
+	    		+ "W para escrever em um arquivo>? ");
+		
+	    String opr= console.nextLine();
+		
+	    if (opr.equals("R") || opr.equals("r")){
+			 read(FILENAME);
+		}
+		else if (opr.equals("W") || opr.equals("w")) {
+			write(FILENAME);
+		}
+		else {
+			System.out.println("Operacao invalida. Tente novamente.");
+			RorWMethod(FILENAME);
+		}
+	}
+	
+	void read (String FILENAME) {
+		BufferedReader br = null;
+		FileReader fr = null;
+		
+		try {
+			fr = new FileReader(FILENAME);
+			br = new BufferedReader(fr);
+			
+			String sCurrentLine;
+
+			while ((sCurrentLine = br.readLine()) != null) {
+				System.out.println(sCurrentLine);
+			}
+			
+			fr.close();
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	void write (String FILENAME) {
+		FileWriter buffWrite = null;
+		  
+		try {
+			buffWrite = new FileWriter(new FileWriter(FILENAME));
+			String linha = "";
+			System.out.println("Escreva algo: ");
+		    linha = console.nextLine();
+		    buffWrite.append(linha + "\n");
+		    buffWrite.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
