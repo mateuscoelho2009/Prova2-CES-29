@@ -1,0 +1,28 @@
+package Q2.Q2;
+
+import java.util.Scanner;
+
+import junit.framework.TestCase;
+
+public class VulnerabilityTest extends TestCase {
+	static VulnerableClass vc = new VulnerableClass();
+	
+	// Eliminado método vulnerableMethod, visto que fazia uma operação de forma infinita.
+	public static void testGettingInputStream()
+    {
+        vc.RorWMethod ("teste.txt");
+        boolean error = false;
+        Scanner c = null;
+        
+        try {
+        	c = new Scanner(System.in);
+        } catch (Exception e) {
+        	error = true;
+        } finally {
+        	if (c != null)
+        		c.close();
+        }
+        
+        assertFalse(error);
+    }
+}

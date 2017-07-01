@@ -1,0 +1,12 @@
+package Q2.Q2;
+
+import junit.framework.Test;
+
+public class VulnerabilityTest extends TestCase {
+	VulnerableClass vc = new VulnerableClass();
+	
+	public static void testClosingScanner()
+    {
+        
+    }
+}
