@@ -1,0 +1,10 @@
+package Q1.Q1;
+
+public class Book {
+	private String name;
+	float rating;
+	
+	Book (String name) {
+		
+	}
+}
