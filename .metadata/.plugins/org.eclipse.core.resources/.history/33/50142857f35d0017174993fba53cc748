@@ -1,0 +1,11 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class MockBD {
+	Vector<Book> books;
+	
+	MockBD () {
+		
+	}
+}
