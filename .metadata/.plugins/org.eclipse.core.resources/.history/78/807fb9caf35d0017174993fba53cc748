@@ -1,0 +1,7 @@
+package Q1.Q1;
+
+public class Store {
+	BD bd;
+	
+	
+}

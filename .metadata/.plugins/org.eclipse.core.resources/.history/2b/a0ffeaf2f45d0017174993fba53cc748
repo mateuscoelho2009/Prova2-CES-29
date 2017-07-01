@@ -1,0 +1,23 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class MockBD implements BD {
+	Vector<Book> books;
+	
+	MockBD () {
+		for (int i = 0; i < 10; i++) {
+			books.add(new Book("Livro " + i));
+		}
+	}
+
+	public Vector<Book> searchByRating(int minRating) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Vector<Book> searchByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

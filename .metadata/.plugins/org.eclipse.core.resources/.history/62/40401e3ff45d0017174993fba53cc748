@@ -1,0 +1,19 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class Store {
+	BD bdb;
+	
+	Store (BD bdb) {
+		this.bdb = bdb;
+	}
+	
+	Vector<Book> searchByRating (int minRating) {
+		return bdb.searchByRating(minRating);
+	}
+	
+	Vector<Book> searchByName (String name) {
+		return bdb.searchByName(name);
+	}
+}

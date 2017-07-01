@@ -1,0 +1,36 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class MockBD implements BD {
+	Vector<Book> books;
+	
+	MockBD () {
+		books = new Vector<Book>();
+		for (int i = 0; i < 10; i++) {
+			books.add(new Book("Livro " + i));
+		}
+	}
+
+	public Vector<Book> searchByRating(int minRating) {
+		Vector<Book> res = new Vector<Book>();
+		for (int i = 0; i < books.size(); i++) {
+			if (books.get(i).getRate() >= minRating) {
+				res.add(books.get(i));
+			}
+		}
+
+		return res;
+	}
+
+	public Vector<Book> searchByName(String name) {
+		Vector<Book> res = new Vector<Book>();
+		for (int i = 0; i < books.size(); i++) {
+			if (books.get(i).getName()) {
+				res.add(books.get(i));
+			}
+		}
+
+		return res;
+	}
+}

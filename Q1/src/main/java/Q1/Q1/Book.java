@@ -11,7 +11,7 @@ public class Book {
 		this.name = name;
 	}
 	
-	void rate (int newRate) {
+	public void rate (int newRate) {
 		if (newRate > 5) newRate = 5;
 		if (newRate < 0) newRate = 0;
 		
@@ -19,11 +19,11 @@ public class Book {
 		sumRating += newRate;
 	}
 	
-	float getRate () {
+	public float getRate () {
 		return sumRating / numPeopleRated;
 	}
 	
-	String getName () {
+	public String getName () {
 		return name;
 	}
 }

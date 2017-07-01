@@ -1,0 +1,13 @@
+package Q1.Q1;
+
+public class Store {
+	BD bdb;
+	
+	Store (BD bdb) {
+		this.bdb = bdb;
+	}
+	
+	Vector<Book> searchByRating () {
+		bdb.searchByRating();
+	}
+}

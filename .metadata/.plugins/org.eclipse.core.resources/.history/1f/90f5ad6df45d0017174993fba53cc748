@@ -1,0 +1,25 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class Store {
+	BD bdb;
+	UserBD ubd;
+	
+	boolean isLogged;
+	
+	Store (BD bdb, UserBD ubd) {
+		this.bdb = bdb;
+		this.ubd = ubd;
+		
+		isLogged = false;
+	}
+	
+	Vector<Book> searchByRating (int minRating) {
+		return bdb.searchByRating(minRating);
+	}
+	
+	Vector<Book> searchByName (String name) {
+		return bdb.searchByName(name);
+	}
+}
