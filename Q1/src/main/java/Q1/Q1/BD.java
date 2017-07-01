@@ -2,10 +2,19 @@ package Q1.Q1;
 
 import java.util.Vector;
 
-public interface BD {
+public abstract class BD {
+	Vector<Book> books;
+	
+	abstract Vector<Book> searchByRating(int minRating);
 
-	Vector<Book> searchByRating(int minRating);
+	abstract Vector<Book> searchByName(String name);
 
-	Vector<Book> searchByName(String name);
+	abstract Vector<Book> searchByPrice(float price);
+
+	abstract boolean buy(String name);
+
+	abstract void rate(String bname, int rate);
+
+	abstract void review(String bname, String review);
 
 }

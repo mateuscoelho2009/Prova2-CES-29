@@ -1,0 +1,12 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public interface UserBD {
+	enum SELLING_STATE {NONE, SOLD, SENT, ARRIVED};
+
+	boolean LogIn(String userName);
+
+	void LogOut();
+
+}

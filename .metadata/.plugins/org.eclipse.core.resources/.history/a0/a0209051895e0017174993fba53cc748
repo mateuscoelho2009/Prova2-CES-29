@@ -1,0 +1,9 @@
+package Q1.Q1;
+
+public interface UserBD {
+
+	boolean LogIn(String userName);
+
+	void LogOut();
+
+}

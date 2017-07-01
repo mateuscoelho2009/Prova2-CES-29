@@ -1,0 +1,58 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class Store {
+	BD bdb;
+	UserBD ubd;
+	
+	boolean isLogged;
+	
+	Store (BD bdb, UserBD ubd) {
+		this.bdb = bdb;
+		this.ubd = ubd;
+		
+		isLogged = false;
+	}
+	
+	void LogIn (String userName) {
+		isLogged = ubd.LogIn (userName);
+	}
+	
+	void LogOut () {
+		isLogged = false;
+		ubd.LogOut();
+	}
+	
+	Vector<Book> searchByRating (int minRating) {
+		if (!isLogged) return null;
+		return bdb.searchByRating(minRating);
+	}
+	
+	Vector<Book> searchByName (String name) {
+		if (!isLogged) return null;
+		return bdb.searchByName(name);
+	}
+	
+	Vector<Book> searchByPrice (float price) {
+		if (!isLogged) return null;
+		return bdb.searchByPrice(price);
+	}
+	
+	boolean buy (String name) {
+		if (!isLogged) return false;		
+		return bdb.buy(name);
+	}
+	
+	void review (String bname, String review) {
+		if (!isLogged) return;
+		bdb.review (bname, review);
+	}
+	
+	void rate (String bname, int rate) {
+		if (!isLogged) return;
+		bdb.rate (bname, rate);
+	}
+	
+	//void addBookToLater
+}

@@ -1,0 +1,11 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public interface UserBD {
+
+	boolean LogIn(String userName);
+
+	void LogOut();
+
+}

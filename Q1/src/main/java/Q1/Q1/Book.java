@@ -1,14 +1,22 @@
 package Q1.Q1;
 
+import java.util.Vector;
+
 public class Book {
 	private String name;
 	int sumRating;
 	int numPeopleRated;
+	int qnt;
+	float price;
+	Vector<String> reviews;
 	
-	Book (String name) {
+	Book (String name, int qnt, float price) {
 		numPeopleRated = 0;
 		sumRating = 0;
 		this.name = name;
+		this.qnt = qnt;
+		this.price = price;
+		reviews = new Vector<String>();
 	}
 	
 	public void rate (int newRate) {
@@ -19,11 +27,28 @@ public class Book {
 		sumRating += newRate;
 	}
 	
+	public void review (String r) {
+		reviews.add(r);
+	}
+	
 	public float getRate () {
 		return sumRating / numPeopleRated;
 	}
 	
 	public String getName () {
 		return name;
+	}
+	
+	void buy () {
+		if (qnt != 0)
+			qnt--;
+	}
+	
+	float getPrice () {
+		return price;
+	}
+	
+	int getQnt () {
+		return qnt;
 	}
 }

@@ -2,6 +2,8 @@ package Q1.Q1;
 
 import java.util.Vector;
 
+import Q1.Q1.UserBD.SELLING_STATE;
+
 public class Store {
 	BD bdb;
 	UserBD ubd;
@@ -32,5 +34,36 @@ public class Store {
 	Vector<Book> searchByName (String name) {
 		if (!isLogged) return null;
 		return bdb.searchByName(name);
+	}
+	
+	Vector<Book> searchByPrice (float price) {
+		if (!isLogged) return null;
+		return bdb.searchByPrice(price);
+	}
+	
+	boolean buy (String name) {
+		if (!isLogged) return false;		
+		return bdb.buy(name);
+	}
+	
+	void review (String bname, String review) {
+		if (!isLogged) return;
+		bdb.review (bname, review);
+	}
+	
+	void rate (String bname, int rate) {
+		if (!isLogged) return;
+		bdb.rate (bname, rate);
+	}
+	
+	void addBookToLaterSells (String bname) {
+		if (!isLogged) return;
+		Vector<Book> b = searchByName(bname);
+		if (b.size() != 0)
+			ubd.addBookToLaterSells(searchByName(bname).get(0));
+	}
+	
+	SELLING_STATE checkSellingStatus (String bname) {
+		return ubd.checkSellingStatus(bname);
 	}
 }

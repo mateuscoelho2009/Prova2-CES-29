@@ -1,0 +1,15 @@
+package Q1.Q1;
+
+public class MockUserBD implements UserBD {
+
+	public boolean LogIn(String userName) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void LogOut() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

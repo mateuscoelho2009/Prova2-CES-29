@@ -1,0 +1,17 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public class MockUserBD implements UserBD {
+	Vector<SELLING_STATE> sstates;
+	Vector<Book> userBooks;
+
+	public boolean LogIn(String userName) {
+		return true;
+	}
+
+	public void LogOut() {
+		
+	}
+
+}

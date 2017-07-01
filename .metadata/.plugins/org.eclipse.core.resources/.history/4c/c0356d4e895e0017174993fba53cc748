@@ -1,0 +1,22 @@
+package Q1.Q1;
+
+import java.util.Vector;
+
+public abstract class BD {
+	Vector<Book> books;
+	Vector<SELLING_STATE> sstates;
+	enum SELLING_STATE {NONE, SOLD, SENT, ARRIVED};
+	
+	abstract Vector<Book> searchByRating(int minRating);
+
+	abstract Vector<Book> searchByName(String name);
+
+	abstract Vector<Book> searchByPrice(float price);
+
+	abstract boolean buy(String name);
+
+	abstract void rate(String bname, int rate);
+
+	abstract void review(String bname, String review);
+
+}
