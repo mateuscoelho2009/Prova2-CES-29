@@ -1,0 +1,9 @@
+package Q3.Q3;
+
+public class GenericView {
+	public void printObjectDetails(Object o, String objName, String objRollNo) {
+		System.out.println(o.getClass() + ": ");
+		System.out.println("Name: " + studentName);
+		System.out.println("Roll No: " + studentRollNo);
+	}
+}

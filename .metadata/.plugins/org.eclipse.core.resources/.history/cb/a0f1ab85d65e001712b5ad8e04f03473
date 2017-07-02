@@ -1,0 +1,52 @@
+package Q3.Q3;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class GenericController {
+	private Object model;
+	private GenericView view;
+
+	private GenericController(Object model) {
+		this.model = model;
+		this.view = new GenericView(model);
+	}
+
+	public void setObjectName(String name) {
+		Class<?>[] paramString = new Class[1];
+		paramString[0] = String.class;
+		
+			Class<?> c = model.getClass();
+			Method method;
+			try {
+				method = c.getDeclaredMethod("setName", paramString);
+				method.invoke(model, name);
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+	}
+
+	public String getStudentName() {
+		return model.getName();
+	}
+
+	public void setStudentRollNo(String rollNo) {
+		model.setRollNo(rollNo);
+	}
+
+	public String getStudentRollNo() {
+		return model.getRollNo();
+	}
+
+	public void updateView() {
+		view.printStudentDetails(model.getName(), model.getRollNo());
+	}
+}
