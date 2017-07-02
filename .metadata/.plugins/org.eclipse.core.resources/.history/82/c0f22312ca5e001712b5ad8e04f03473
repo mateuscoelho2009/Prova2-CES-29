@@ -1,0 +1,40 @@
+package Q1.Q1;
+
+import Q1.Q1.Store;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.pt.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.*;
+
+import junit.framework.Test;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Vector;
+
+public class bookSearch {
+  MockBD mbd = new MockBD();
+  MockUserBD mubd = new MockUserBD();
+  Store s = new Store(mbd, mubd);
+  Vector<Book> searchRes;
+
+  @Given("^A variety of books in BD$")
+  public void given() throws Throwable {
+	  s.LogIn("");
+  }
+
+  @When("^User Search By some Criteria (Like rate)$")
+  public void when(float price) throws Throwable {
+	  searchRes = s.searchByPrice(price);
+  }
+
+  @Then("^He receives The books he wants$")
+  public void then(List<Book> books) throws Throwable {
+	  assertTrue((books.get(0).getPrice() - searchRes.get(0).getPrice() == 0));
+	  assertTrue(books.get(0).getName().compareTo(searchRes.get(0).getName()) == 0);
+	  assertThat(books.get(0).getPrice(), is(searchRes.get(0).getPrice()));
+  }
+
+}

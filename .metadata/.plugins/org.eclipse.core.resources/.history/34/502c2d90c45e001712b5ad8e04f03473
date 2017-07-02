@@ -1,0 +1,23 @@
+package \src\test\java;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
+
+public class bookSearch {
+  @Given("^A variety of books in BD$")
+  public void given() throws Throwable {
+  
+  }
+
+  @When("^User Search By some Criteria (Like rate)$")
+  public void when() throws Throwable {
+  
+  }
+
+  @Then("^He receives The books he wants$")
+  public void then() throws Throwable {
+	  
+  }
+
+}

@@ -21,5 +21,10 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>org.testifyproject.mock</groupId>
+    	<artifactId>mockito</artifactId>
+    	<version>0.9.5</version>
+    </dependency>
   </dependencies>
 </project>

@@ -1,0 +1,25 @@
+#Author: Mateus Menezes
+
+#Sample Feature Definition Template
+@analiseVenda
+Feature: Analise das Funcionalidades da Loja
+
+@bookSearch
+Scenario: Book Search
+Given A variety of books in BD
+When User Search By some Criteria (Like rate) 9
+Then He receives The books he wants
+			| name  |value |
+      | Livro 1 |  10 |
+      | Livro 2 |  9  |
+
+@tag2
+Scenario Outline: Title of your scenario outline
+Given I want to write a step with <name>
+When I check for the <value> in step
+Then I verify the <status> in step
+
+Examples:
+    | name  |value | status |
+    | name1 |  5   | success|
+    | name2 |  7   | Fail   |
