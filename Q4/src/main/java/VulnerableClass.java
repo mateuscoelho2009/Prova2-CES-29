@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -10,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class VulnerableClass {
-	// Retorna se operação foi feita com sucesso
+	//Retorna se operação foi feita com sucesso
 	public boolean RorWMethod (String FILENAME) {
 		Pattern pattern = Pattern.compile("[^A-Za-z0-9._]");
 		Matcher matcher = pattern.matcher(FILENAME);
